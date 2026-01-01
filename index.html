@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Play Sheriff Looper - A Western horror action-adventure pixel game. Be the sheriff of Espacio town and use your lasso to catch runaway bulls and pests!">
+    <meta name="keywords" content="Sheriff Looper, western game, pixel game, horror game, action adventure, indie game, browser game">
+    <meta name="author" content="kulurc">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://sherifflooper.com/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Sheriff Looper - Western Horror Adventure">
+    <meta property="og:description" content="A Western horror action-adventure game. Play as the sheriff of Espacio town!">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sherifflooper.com">
+    <meta property="og:image" content="https://sherifflooper.com/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Sheriff Looper">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sheriff Looper - Western Horror Adventure">
+    <meta name="twitter:description" content="A Western horror action-adventure game. Play as the sheriff of Espacio town!">
+    <meta name="twitter:image" content="https://sherifflooper.com/og-image.png">
+
+    <title>Sheriff Looper - Play Free | Western Horror Adventure Game</title>
+
+    <!-- Fonts - Bebas Neue + DM Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%231A1412'/><text x='50' y='70' text-anchor='middle' font-family='Arial' font-weight='bold' font-size='50' fill='%23E85D04'>S</text></svg>">
+
+    <!-- Analytics -->
+    <script defer data-domain="sherifflooper.com" src="https://stats.toolifybox.com/js/script.file-downloads.outbound-links.js"></script>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "VideoGame",
+        "name": "Sheriff Looper",
+        "description": "A Western horror action-adventure pixel game. Be the sheriff of Espacio town and use your lasso to catch runaway bulls and pests!",
+        "genre": ["Action-Adventure", "Horror", "Western"],
+        "gamePlatform": "Web Browser",
+        "applicationCategory": "Game",
+        "operatingSystem": "Any",
+        "author": {
+            "@type": "Person",
+            "name": "kulurc",
+            "url": "https://kulurc.itch.io/"
+        },
+        "publisher": {
+            "@type": "Person",
+            "name": "kulurc"
+        },
+        "url": "https://sherifflooper.com",
+        "image": "https://sherifflooper.com/og-image.png",
+        "playMode": "SinglePlayer",
+        "gameItem": {
+            "@type": "Thing",
+            "name": "Lasso"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "ratingCount": "10"
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- Loading Screen - Hidden by CSS -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-title">SHERIFF LOOPER</div>
+            <div class="loading-spinner">
+                <div class="spinner-bullet"></div>
+                <div class="spinner-bullet"></div>
+                <div class="spinner-bullet"></div>
+            </div>
+            <div class="loading-text">Loading...</div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div id="main-container" class="main-container hidden">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-icon"></span>
+                    <span class="logo-text">SHERIFF LOOPER</span>
+                </div>
+                <nav class="nav">
+                    <a href="#game" class="nav-link active">PLAY</a>
+                    <a href="#about" class="nav-link">ABOUT</a>
+                    <a href="#guide" class="nav-link">GUIDE</a>
+                    <a href="#comments" class="nav-link">COMMUNITY</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Game Section -->
+        <section id="game" class="game-section">
+            <h1 class="game-main-title">Sheriff Looper - Play Free Online</h1>
+            <div class="game-wrapper" id="game-wrapper">
+                <div class="game-frame-border">
+                    <div class="game-header">
+                        <span class="game-title-small">NOW PLAYING</span>
+                    </div>
+                    <div class="game-container" id="game-container">
+                        <iframe
+                            id="game-iframe"
+                            src="https://html.itch.zone/html/15969245/WebGL/index.html"
+                            allowfullscreen
+                            frameborder="0"
+                        ></iframe>
+                        <div class="game-overlay" id="game-overlay">
+                            <button class="play-button" id="play-button">
+                                <span class="play-icon">&#9658;</span>
+                                <span class="play-text">CLICK TO PLAY</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="game-controls">
+                        <button class="control-btn" id="theater-btn" title="Theater Mode (T)">
+                            <span class="btn-icon">[ ]</span>
+                            <span class="btn-text">THEATER</span>
+                        </button>
+                        <button class="control-btn" id="fullscreen-btn" title="Fullscreen (F)">
+                            <span class="btn-icon">[+]</span>
+                            <span class="btn-text">FULLSCREEN</span>
+                        </button>
+                        <button class="control-btn" id="sound-btn" title="Toggle Sound (M)">
+                            <span class="btn-icon">VOL</span>
+                            <span class="btn-text">SOUND</span>
+                        </button>
+                        <button class="control-btn" id="help-btn" title="Help">
+                            <span class="btn-icon">?</span>
+                            <span class="btn-text">HELP</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Theater Mode Exit Button -->
+            <button class="theater-exit-btn hidden" id="theater-exit-btn">
+                <span>X EXIT THEATER</span>
+            </button>
+        </section>
+
+        <!-- Quick Tips Banner -->
+        <section class="tips-banner">
+            <div class="tips-content">
+                <span class="tip-icon">TIP:</span>
+                <span class="tip-text">Use <kbd>WASD</kbd> to move, <kbd>Mouse</kbd> to aim your lasso, and <kbd>Left Click</kbd> to throw!</span>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="section-container">
+                <h2 class="section-title">
+                    <span class="title-decoration">*</span>
+                    ABOUT THE GAME
+                    <span class="title-decoration">*</span>
+                </h2>
+
+                <!-- Content Warning -->
+                <div class="content-warning">
+                    <span class="warning-icon">!</span>
+                    <span class="warning-text">Contains mild body horror of animals and people. Discretion is advised.</span>
+                </div>
+
+                <div class="about-content">
+                    <div class="about-text">
+                        <p class="about-tagline">"Protect the people of Espacio!"</p>
+
+                        <p class="about-description">
+                            In <strong>Sheriff Looper</strong>, players take on the role of the appointed Sheriff, using a looping lasso to help herd runaway bulls, catch pests, and handle mysterious threats. Sheriff Looper is a short horror-themed action adventure game with looping mechanics similar to <em>Pokemon Ranger</em>, taking approximately <strong>30 minutes</strong> to complete.
+                        </p>
+
+                        <p class="about-description">
+                            Built with the Godot Engine, <strong>Sheriff Looper</strong> represents developer kulu's vision of blending Western aesthetics with subtle horror elements in beautiful pixel art style. This is kulu's last game of 2025, expanded from the <strong>GMTK Game Jam 2025</strong> entry "Looper's Roundup."
+                        </p>
+
+                        <p class="about-description">
+                            Don't be fooled by Sheriff Looper's charming pixel art style - players have noted the game's clever bait-and-switch, describing it as "a nice wholesome pixel art style to lure you in... until the incident." Sheriff Looper masterfully transitions from innocent Western adventure to something darker.
+                        </p>
+
+                        <div class="game-meta">
+                            <div class="meta-item">
+                                <span class="meta-label">PLAYTIME</span>
+                                <span class="meta-value">~30 minutes</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">RATING</span>
+                                <span class="meta-value rating">5.0 / 5</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">PRICE</span>
+                                <span class="meta-value">Free / Name Your Price</span>
+                            </div>
+                        </div>
+
+                        <div class="game-tags">
+                            <span class="tag">Adventure</span>
+                            <span class="tag">Action</span>
+                            <span class="tag">Horror</span>
+                            <span class="tag">Story Rich</span>
+                            <span class="tag">Pixel Art</span>
+                            <span class="tag">Top-Down</span>
+                            <span class="tag">2D</span>
+                            <span class="tag">Singleplayer</span>
+                        </div>
+                    </div>
+
+                    <div class="about-sidebar">
+                        <div class="info-card">
+                            <h3 class="info-card-title">PLATFORMS</h3>
+                            <ul class="platform-list">
+                                <li><span class="platform-icon">WEB</span> Play in Browser (HTML5)</li>
+                                <li><span class="platform-icon">WIN</span> Windows Download</li>
+                                <li><span class="platform-icon">MAC</span> macOS Download</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-card">
+                            <h3 class="info-card-title">REQUIREMENTS</h3>
+                            <ul class="requirements-list">
+                                <li>Mouse and Keyboard required</li>
+                                <li>Fullscreen recommended</li>
+                                <li>Modern web browser</li>
+                            </ul>
+                        </div>
+
+                        <a href="https://kulurc.itch.io/sheriff-looper" target="_blank" rel="noopener" class="itch-button">
+                            <span>View on itch.io</span>
+                            <span class="arrow">-></span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="developer-credit">
+                    <span class="credit-text">Developed by</span>
+                    <a href="https://kulurc.itch.io/" target="_blank" rel="noopener" class="developer-link">kulu</a>
+                    <span class="credit-text"> - Made with Godot Engine</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Screenshots Section -->
+        <section id="screenshots" class="screenshots-section">
+            <div class="section-container">
+                <h2 class="section-title">
+                    <span class="title-decoration">*</span>
+                    SHERIFF LOOPER SCREENSHOTS
+                    <span class="title-decoration">*</span>
+                </h2>
+                <div class="screenshots-grid">
+                    <div class="screenshot-item">
+                        <img src="https://placehold.co/800x450/3E2723/FFEB8C?text=Screenshot+1" alt="Sheriff Looper Gameplay" class="screenshot-img">
+                    </div>
+                    <div class="screenshot-item">
+                        <img src="https://placehold.co/800x450/3E2723/FFEB8C?text=Screenshot+2" alt="Sheriff Looper Town" class="screenshot-img">
+                    </div>
+                    <div class="screenshot-item">
+                        <img src="https://placehold.co/800x450/3E2723/FFEB8C?text=Screenshot+3" alt="Sheriff Looper Action" class="screenshot-img">
+                    </div>
+                    <div class="screenshot-item">
+                        <img src="https://placehold.co/800x450/3E2723/FFEB8C?text=Screenshot+4" alt="Sheriff Looper Story" class="screenshot-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Developer Section -->
+        <section id="developer" class="developer-section">
+            <div class="section-container">
+                <h2 class="section-title">
+                    <span class="title-decoration">*</span>
+                    ABOUT THE DEVELOPER
+                    <span class="title-decoration">*</span>
+                </h2>
+                <div class="developer-content">
+                    <div class="developer-info">
+                        <h3 class="developer-name">kulu</h3>
+                        <p class="developer-bio">"developing games i want to play :)"</p>
+                        <p class="developer-desc">
+                            kulu is an indie game developer known for creating unique horror-themed adventures with charming pixel art aesthetics. Sheriff Looper is described as "the last game of 2025," expanded from the game jam entry "Looper's Roundup."
+                        </p>
+                        <div class="developer-social">
+                            <a href="https://kulurc.itch.io" target="_blank" rel="noopener" class="social-link">
+                                <span class="social-icon">itch</span>
+                                <span>itch.io</span>
+                            </a>
+                            <a href="https://youtube.com/@kulurc" target="_blank" rel="noopener" class="social-link">
+                                <span class="social-icon">YT</span>
+                                <span>YouTube</span>
+                            </a>
+                            <a href="https://twitter.com/kulurc" target="_blank" rel="noopener" class="social-link">
+                                <span class="social-icon">X</span>
+                                <span>Twitter</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- More Games Section -->
+        <section id="more-games" class="more-games-section">
+            <div class="section-container">
+                <h2 class="section-title">
+                    <span class="title-decoration">*</span>
+                    MORE BY KULU
+                    <span class="title-decoration">*</span>
+                </h2>
+                <div class="games-grid">
+                    <a href="https://kulurc.itch.io/hungry-lamu-2" target="_blank" rel="noopener" class="game-card">
+                        <div class="game-card-img">
+                            <img src="https://placehold.co/400x225/2D1F1A/FFEB8C?text=Hungry+Lamu+2" alt="Hungry Lamu 2">
+                        </div>
+                        <div class="game-card-info">
+                            <h4>Hungry Lamu 2</h4>
+                            <p>Help Lamu one last time</p>
+                            <span class="game-card-tag">Adventure</span>
+                        </div>
+                    </a>
+                    <a href="https://kulurc.itch.io/hungry-lamu" target="_blank" rel="noopener" class="game-card">
+                        <div class="game-card-img">
+                            <img src="https://placehold.co/400x225/2D1F1A/FFEB8C?text=Hungry+Lamu" alt="Hungry Lamu">
+                        </div>
+                        <div class="game-card-info">
+                            <h4>Hungry Lamu</h4>
+                            <p>Help Lamu find food</p>
+                            <span class="game-card-tag">Adventure</span>
+                        </div>
+                    </a>
+                    <a href="https://kulurc.itch.io/untime" target="_blank" rel="noopener" class="game-card">
+                        <div class="game-card-img">
+                            <img src="https://placehold.co/400x225/2D1F1A/FFEB8C?text=Untime" alt="Untime">
+                        </div>
+                        <div class="game-card-info">
+                            <h4>Untime</h4>
+                            <p>All we need is a fresh start</p>
+                            <span class="game-card-tag">Adventure</span>
+                        </div>
+                    </a>
+                    <a href="https://kulurc.itch.io/porkbound" target="_blank" rel="noopener" class="game-card">
+                        <div class="game-card-img">
+                            <img src="https://placehold.co/400x225/2D1F1A/FFEB8C?text=Porkbound" alt="Porkbound">
+                        </div>
+                        <div class="game-card-info">
+                            <h4>Porkbound</h4>
+                            <p>Protect your family from strange creatures</p>
+                            <span class="game-card-tag">Action</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="more-games-link">
+                    <a href="https://kulurc.itch.io" target="_blank" rel="noopener" class="view-all-btn">
+                        View All Games on itch.io
+                        <span class="arrow">-></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Community Reviews Section -->
+        <section id="reviews" class="reviews-section">
+            <div class="section-container">
+                <h2 class="section-title">
+                    <span class="title-decoration">*</span>
+                    PLAYER REVIEWS
+                    <span class="title-decoration">*</span>
+                </h2>
+                <p class="reviews-intro">What players are saying about Sheriff Looper</p>
+
+                <div class="reviews-grid">
+                    <div class="review-card featured">
+                        <div class="review-header">
+                            <span class="reviewer-name">AdrIan_Mc</span>
+                            <span class="review-rating">+4</span>
+                        </div>
+                        <p class="review-text">"Was starting to believe I had accidentally downloaded a nice and wholesome game... until the incident. Really good game, nice gimmick to it despite my inability to get good at said gimmick, and a nice wholesome pixel art style to lure you in. Pretty solid game."</p>
+                        <div class="dev-reply">
+                            <span class="dev-label">kulu replied:</span>
+                            <p>"thanks for playing! glad you enjoyed it :)"</p>
+                        </div>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <span class="reviewer-name">Brokenskull</span>
+                            <span class="review-rating">+1</span>
+                        </div>
+                        <p class="review-text">"Loved Hungry Lamu! Loved Untime! And I ABSOLUTELY LOVE SHERIFF LOOPER... Thanks for the amazing addition Kulu... Gonna be on the lookout for a sequel!"</p>
+                        <div class="dev-reply">
+                            <span class="dev-label">kulu replied:</span>
+                            <p>"loved the lets play! thanks for sharing the game!"</p>
+                        </div>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <span class="reviewer-name">Sodium Cyanide</span>
+                            <span class="review-rating">+3</span>
+                        </div>
+                        <p class="review-text">"Red Dead Redemption 3 looking kinda fire. Anyway, cool game."</p>
+                        <div class="dev-reply">
+                            <span class="dev-label">kulu replied:</span>
+                            <p>"im already working on gta7, thanks for playing!"</p>
+                        </div>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <span class="reviewer-name">JulianJohn_976</span>
+                            <span class="review-rating">NEW</span>
+                        </div>
+                        <p class="review-text">"Awesome 'Western' Game! I played your game in first day of 2026 and it was Terrific. By the way, I almost got every shiny badge in your game and it was useful!"</p>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <span class="reviewer-name">GrittyGray</span>
+                            <span class="review-rating">+1</span>
+                        </div>
+                        <p class="review-text">"I watched bigGaming64 play it for some time and I love the game I checked it out and I love it."</p>
+                        <div class="dev-reply">
+                            <span class="dev-label">kulu replied:</span>
+                            <p>"thank u for playing! glad u loved it :)"</p>
+                        </div>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <span class="reviewer-name">Bis35</span>
+                            <span class="review-rating">+3</span>
+                        </div>
+                        <p class="review-text">"Fantastic game."</p>
+                        <div class="dev-reply">
+                            <span class="dev-label">kulu replied:</span>
+                            <p>"thank you for playing and sharing!"</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reviews-cta">
+                    <a href="https://kulurc.itch.io/sheriff-looper" target="_blank" rel="noopener" class="view-all-btn">
+                        Read More Reviews on itch.io
+                        <span class="arrow">-></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Game Origin Section -->
+        <section id="origin" class="origin-section">
+            <div class="section-container">
+                <h2 class="section-title">
+                    <span class="title-decoration">*</span>
+                    GAME ORIGIN
+                    <span class="title-decoration">*</span>
+                </h2>
+
+                <div class="origin-content">
+                    <div class="origin-card jam-card">
+                        <span class="origin-badge">GMTK JAM 2025</span>
+                        <h3>Looper's Roundup!</h3>
+                        <p class="origin-desc">Sheriff Looper began as a game jam entry called "Looper's Roundup!" created for the GMTK Game Jam 2025. The original jam version focused on helping a local farmer round up runaway bulls using a trusty lasso.</p>
+                        <div class="origin-stats">
+                            <div class="origin-stat">
+                                <span class="stat-value">3.5/5</span>
+                                <span class="stat-label">Jam Rating</span>
+                            </div>
+                            <div class="origin-stat">
+                                <span class="stat-value">49 MB</span>
+                                <span class="stat-label">Original Size</span>
+                            </div>
+                        </div>
+                        <a href="https://kulurc.itch.io/loopers-roundup" target="_blank" rel="noopener" class="origin-link">Play Original Jam Version -></a>
+                    </div>
+
+                    <div class="origin-card evolution-card">
+                        <span class="origin-badge">FULL RELEASE</span>
+                        <h3>Sheriff Looper</h3>
+                        <p class="origin-desc">After positive reception, kulu decided to expand the jam entry into a full game. Sheriff Looper adds a complete story, horror elements, new mechanics, more characters, and approximately 30 minutes of gameplay.</p>
+                        <div class="origin-stats">
+                            <div class="origin-stat">
+                                <span class="stat-value">5.0/5</span>
+                                <span class="stat-label">Full Game Rating</span>
+                            </div>
+                            <div class="origin-stat">
+                                <span class="stat-value">107 MB</span>
+                                <span class="stat-label">Full Game Size</span>
+                            </div>
+                        </div>
+                        <p class="origin-note">"The last game of 2025" - kulu</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guide Section -->
+        <section id="guide" class="guide-section">
+            <div class="section-container">
+                <h2 class="section-title">
+                    <span class="title-decoration">*</span>
+                    HOW TO PLAY SHERIFF LOOPER
+                    <span class="title-decoration">*</span>
+                </h2>
+
+                <!-- Controls -->
+                <div class="guide-block">
+                    <h3 class="guide-subtitle">CONTROLS</h3>
+                    <div class="controls-grid">
+                        <div class="control-item">
+                            <div class="key-group">
+                                <span class="key">W</span>
+                                <span class="key">A</span>
+                                <span class="key">S</span>
+                                <span class="key">D</span>
+                            </div>
+                            <span class="control-desc">Move your character</span>
+                        </div>
+                        <div class="control-item">
+                            <div class="key-group">
+                                <span class="key">MOUSE</span>
+                            </div>
+                            <span class="control-desc">Aim your lasso</span>
+                        </div>
+                        <div class="control-item">
+                            <div class="key-group">
+                                <span class="key">LMB</span>
+                            </div>
+                            <span class="control-desc">Throw lasso</span>
+                        </div>
+                        <div class="control-item">
+                            <div class="key-group">
+                                <span class="key">E</span>
+                            </div>
+                            <span class="control-desc">Interact</span>
+                        </div>
+                        <div class="control-item">
+                            <div class="key-group">
+                                <span class="key">ESC</span>
+                            </div>
+                            <span class="control-desc">Pause menu</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tips -->
+                <div class="guide-block">
+                    <h3 class="guide-subtitle">TIPS & TRICKS</h3>
+                    <div class="tips-grid">
+                        <div class="tip-card">
+                            <span class="tip-number">01</span>
+                            <h4>Master the Lasso</h4>
+                            <p>In Sheriff Looper, your lasso is your main tool. Practice aiming and timing to catch moving targets efficiently.</p>
+                        </div>
+                        <div class="tip-card">
+                            <span class="tip-number">02</span>
+                            <h4>Explore Everything</h4>
+                            <p>The town of Espacio hides many secrets. Talk to everyone and check every corner.</p>
+                        </div>
+                        <div class="tip-card">
+                            <span class="tip-number">03</span>
+                            <h4>Watch for Signs</h4>
+                            <p>The horror elements are subtle. Pay attention to environmental changes and audio cues.</p>
+                        </div>
+                        <div class="tip-card">
+                            <span class="tip-number">04</span>
+                            <h4>Take Your Time</h4>
+                            <p>Sheriff Looper is a ~30 minute experience. Don't rush - immerse yourself in the atmosphere.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Walkthrough -->
+                <div class="guide-block">
+                    <h3 class="guide-subtitle">WALKTHROUGH</h3>
+                    <div class="walkthrough-accordion">
+                        <details class="walkthrough-item">
+                            <summary class="walkthrough-header">
+                                <span class="chapter-num">Chapter 1</span>
+                                <span class="chapter-title">The Beginning</span>
+                                <span class="expand-icon">+</span>
+                            </summary>
+                            <div class="walkthrough-content">
+                                <p>Sheriff Looper begins as you wake up as the sheriff of Espacio. Your first task is to familiarize yourself with the town and talk to the locals. Start by exploring the main street and visiting the key buildings.</p>
+                                <p class="spoiler-warning">* Detailed Sheriff Looper walkthrough coming soon! Play the game first for the best experience.</p>
+                            </div>
+                        </details>
+                        <details class="walkthrough-item">
+                            <summary class="walkthrough-header">
+                                <span class="chapter-num">Chapter 2</span>
+                                <span class="chapter-title">The First Task</span>
+                                <span class="expand-icon">+</span>
+                            </summary>
+                            <div class="walkthrough-content">
+                                <p>Your lasso skills will be put to the test. Learn to catch runaway animals and deal with the pests threatening the town.</p>
+                                <p class="spoiler-warning">* Detailed walkthrough coming soon!</p>
+                            </div>
+                        </details>
+                        <details class="walkthrough-item">
+                            <summary class="walkthrough-header">
+                                <span class="chapter-num">Chapter 3</span>
+                                <span class="chapter-title">Strange Occurrences</span>
+                                <span class="expand-icon">+</span>
+                            </summary>
+                            <div class="walkthrough-content">
+                                <p>Things start getting weird in Espacio. Pay attention to the subtle changes in the environment...</p>
+                                <p class="spoiler-warning">* Detailed walkthrough coming soon!</p>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comments Section -->
+        <section id="comments" class="comments-section">
+            <div class="section-container">
+                <h2 class="section-title">
+                    <span class="title-decoration">*</span>
+                    COMMUNITY
+                    <span class="title-decoration">*</span>
+                </h2>
+                <p class="comments-intro">Share your Sheriff Looper experience, tips, or ask questions about the game!</p>
+
+                <div id="disqus_thread" class="disqus-container"></div>
+
+                <noscript>
+                    <div class="no-js-message">
+                        Please enable JavaScript to view the comments powered by Disqus.
+                    </div>
+                </noscript>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <div class="footer-logo">SHERIFF LOOPER</div>
+                    <p class="footer-desc">The ultimate fan hub for Sheriff Looper</p>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4>GAME</h4>
+                        <a href="#game">Play Now</a>
+                        <a href="#guide">How to Play</a>
+                        <a href="#about">About</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>LINKS</h4>
+                        <a href="https://kulurc.itch.io/sheriff-looper" target="_blank" rel="noopener">itch.io Page</a>
+                        <a href="https://kulurc.itch.io/" target="_blank" rel="noopener">Developer</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>SHARE</h4>
+                        <a href="https://twitter.com/intent/tweet?text=Check%20out%20Sheriff%20Looper%20-%20A%20Western%20horror%20adventure!&url=https://sherifflooper.com" target="_blank" rel="noopener">Twitter</a>
+                        <a href="https://www.reddit.com/submit?url=https://sherifflooper.com&title=Sheriff%20Looper%20-%20Western%20Horror%20Game" target="_blank" rel="noopener">Reddit</a>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <p>Sheriff Looper is developed by <a href="https://kulurc.itch.io/" target="_blank" rel="noopener">kulurc</a>. This is an unofficial fan site.</p>
+                    <p class="copyright">2026 SheriffLooper.com - Fan Site</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Help Modal -->
+    <div class="modal hidden" id="help-modal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close">X</button>
+            <h3 class="modal-title">GAME HELP</h3>
+            <div class="modal-body">
+                <h4>Keyboard Shortcuts</h4>
+                <ul class="shortcut-list">
+                    <li><kbd>F</kbd> - Toggle Fullscreen</li>
+                    <li><kbd>T</kbd> - Toggle Theater Mode</li>
+                    <li><kbd>M</kbd> - Toggle Sound</li>
+                    <li><kbd>ESC</kbd> - Exit Fullscreen/Theater</li>
+                </ul>
+                <h4>Having Issues?</h4>
+                <ul>
+                    <li>Make sure your browser is up to date</li>
+                    <li>Try refreshing the page if the game doesn't load</li>
+                    <li>Use Chrome or Firefox for best experience</li>
+                    <li>This game requires keyboard & mouse</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Redirect -->
+    <div class="mobile-page hidden" id="mobile-page">
+        <div class="mobile-content">
+            <div class="mobile-header">
+                <span class="mobile-icon"></span>
+                <h1 class="mobile-title">SHERIFF LOOPER</h1>
+                <p class="mobile-subtitle">Western Horror Adventure</p>
+            </div>
+
+            <div class="mobile-screenshots">
+                <div class="mobile-screenshot">
+                    <div class="screenshot-placeholder large">
+                        <span>GAME</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mobile-notice">
+                <span class="notice-icon">!</span>
+                <h2>Keyboard & Mouse Required</h2>
+                <p>This game needs keyboard and mouse controls for the best experience. Please visit on a desktop or laptop computer.</p>
+            </div>
+
+            <div class="mobile-actions">
+                <button class="mobile-btn primary" id="copy-link-btn">
+                    <span>+</span> Copy Link
+                </button>
+                <button class="mobile-btn" id="share-btn">
+                    <span>></span> Share
+                </button>
+            </div>
+
+            <div class="mobile-footer">
+                <p>Bookmark this page and come back on your computer!</p>
+                <a href="https://kulurc.itch.io/sheriff-looper" target="_blank" class="itch-link">
+                    View on itch.io
+                </a>
+            </div>
+        </div>
+
+        <div class="mobile-bg-elements"></div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <!-- Disqus -->
+    <script>
+        var disqus_config = function () {
+            this.page.url = 'https://sherifflooper.com';
+            this.page.identifier = 'sheriff-looper-home';
+        };
+        (function() {
+            var d = document, s = d.createElement('script');
+            s.src = 'https://sherifflooper.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+</body>
+</html>
