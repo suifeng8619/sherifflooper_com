@@ -152,6 +152,30 @@ body::before {
     transform: scaleX(1);
 }
 
+/* Spoiler Link - Special Styling */
+.nav-link.spoiler-link {
+    color: #DC143C;
+    border: 1px solid #DC143C;
+    padding: 8px 12px;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+.nav-link.spoiler-link:hover {
+    background: #DC143C;
+    color: white;
+}
+
+.nav-link.spoiler-link::after {
+    display: none;
+}
+
+/* Additional accent colors */
+:root {
+    --rust-orange: #E85D04;
+    --gold-accent: #FFD700;
+}
+
 /* =========================================
    HERO / GAME SECTION
    ========================================= */
