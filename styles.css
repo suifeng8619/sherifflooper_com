@@ -185,6 +185,101 @@ body::before {
     position: relative;
 }
 
+/* Game Area - Wrapper for game + floating panel */
+.game-area {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1600px;
+    justify-content: center;
+}
+
+/* Floating Controls Panel */
+.floating-controls {
+    background: rgba(45, 31, 26, 0.95);
+    border: 2px solid var(--warm-black);
+    border-radius: var(--radius);
+    padding: 20px;
+    min-width: 160px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 90px;
+}
+
+.floating-title {
+    font-family: var(--font-display);
+    font-size: 14px;
+    letter-spacing: 0.15em;
+    color: var(--cream-yellow);
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 235, 140, 0.3);
+}
+
+.floating-control-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.floating-control-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.floating-keys {
+    background: var(--cream-yellow);
+    color: var(--deep-brown);
+    font-family: var(--font-display);
+    font-size: 11px;
+    padding: 4px 8px;
+    border-radius: 3px;
+    min-width: 50px;
+    text-align: center;
+}
+
+.floating-desc {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.floating-tips-link {
+    display: block;
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 235, 140, 0.3);
+    font-family: var(--font-display);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--cream-yellow);
+    text-decoration: none;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.floating-tips-link:hover {
+    color: var(--cream-light);
+}
+
+/* Hide floating controls in theater mode */
+.game-wrapper.theater-mode ~ .floating-controls {
+    display: none;
+}
+
+/* Responsive: Hide on smaller screens */
+@media (max-width: 1200px) {
+    .floating-controls {
+        display: none;
+    }
+
+    .game-area {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
 /* Decorative Lines */
 .game-section::before {
     content: '';

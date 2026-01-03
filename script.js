@@ -41,6 +41,9 @@
         helpModal: document.getElementById('help-modal'),
         modalClose: document.getElementById('modal-close'),
 
+        // Floating Controls
+        floatingControls: document.getElementById('floating-controls'),
+
         // Mobile
         mobilePage: document.getElementById('mobile-page'),
         copyLinkBtn: document.getElementById('copy-link-btn'),
@@ -254,12 +257,20 @@
             removeClass(elements.theaterExitBtn, 'hidden');
             addClass(elements.theaterBtn, 'active');
             document.body.style.overflow = 'hidden';
+            // Hide floating controls
+            if (elements.floatingControls) {
+                addClass(elements.floatingControls, 'hidden');
+            }
             showToast('Theater Mode - Press ESC or T to exit');
         } else {
             removeClass(elements.gameWrapper, 'theater-mode');
             addClass(elements.theaterExitBtn, 'hidden');
             removeClass(elements.theaterBtn, 'active');
             document.body.style.overflow = '';
+            // Show floating controls
+            if (elements.floatingControls) {
+                removeClass(elements.floatingControls, 'hidden');
+            }
         }
 
         // Focus game
