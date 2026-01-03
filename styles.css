@@ -155,19 +155,15 @@ body::before {
 /* Spoiler Link - Special Styling */
 .nav-link.spoiler-link {
     color: #DC143C;
-    border: 1px solid #DC143C;
-    padding: 8px 12px;
-    border-radius: 3px;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .nav-link.spoiler-link:hover {
-    background: #DC143C;
-    color: white;
+    color: #FF4444;
 }
 
 .nav-link.spoiler-link::after {
-    display: none;
+    background: #DC143C;
 }
 
 /* Additional accent colors */
